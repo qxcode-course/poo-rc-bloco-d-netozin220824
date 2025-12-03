@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-03_11-12-34",
+            "content": "@@ -222,174 +222,5 @@\n %0A   \n- def getId(self):%0A        return self.__id%0A%0A    def getNumber(self):%0A        return self.__number%0A    %0A    def _str_(self):%0A        return f%22%7Bself.__id%7D:%7Bself.__number%7D%22\n %0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2025-12-03_11-15-08",
+            "content": "@@ -9,32 +9,30 @@\n ne:%0A    def \n-_\n _init_\n-_\n (self, id: s\n@@ -21,33 +21,32 @@\n _init_(self, id:\n- \n str, number: str\n@@ -33,33 +33,32 @@\n  id:str, number:\n- \n str):%0A        se\n@@ -333,15 +333,13 @@\n def \n-_\n _str_\n-_\n (sel\n@@ -392,636 +392,4 @@\n r%7D%22%0A\n-%0Aclass Contato:%0A    def __init__(self, nome: str):%0A        self.__nome: str = nome%0A        self.__fone: list = %5B%5D%0A        self.__favorited: bool = False%0A%0A    def addfone(self, id: str, number: str):%0A        fone = Fone(id, number)%0A        if fone.isValid():%0A            self.__fone.append(fone)%0A            return%0A        print(%22fail: invalid number%22)%0A%0A    def rmFone(self, index: int):%0A        try:%0A            self.__fone.pop(index)%0A        except:%0A            print(%22fail: index invalido%22)%0A%0A    def toggleFavorited(self):%0A        self.__favorited = not self.__favorited%0A%0A    def getFones(self):%0A        return self.__fone%0A%0A%0A    %0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-12-03_11-27-19",
+            "content": "class Fone:\n    def __init__(self, id: str, number: str):\n        self.__id: str = id\n        self.__number: str = number\n\n    def isValid(self):\n        em = \"013456789().\"\n        return all(e in em for e in self.__number)\n\n    def getId(self):\n        return self.__id\n\n    def getNumber(self):\n        return self.__number\n    \n    def __str__(self):\n        return f\"{self.__id}:{self.__number}\"\n\nclass Contato:\n    def __init__(self, nome: str):\n        self.__nome: str = nome\n        self.__fone: list = []\n        self.__favorited: bool = False\n\n    def addfone(self, id: str, number: str):\n        fone = Fone(id, number)\n        if fone.isValid():\n            self.__fone.append(fone)\n            return\n        print(\"fail: invalid number\")\n\n    def rmFone(self, index: int):\n        try:\n            self.__fone.pop(index)\n        except:\n            print(\"fail: index invalido\")\n\n    def toggleFavorited(self):\n        self.__favorited = not self.__favorited\n\n    def getFones(self):\n        return self.__fone\n\n\n    \n",
+            "lines": "45"
+        }
+    ]
+}
